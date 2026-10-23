@@ -73,7 +73,7 @@ public class WordleGame {
             throw new IncorrectInputException("Длина слова должна составлять " + WordleRules.WORD_LENGTH + " символов!");
         }
 
-        if (!guess.matches("[а-яА-ЯёЁ ]+")){
+        if (!guess.matches("[а-яА-ЯёЁ ]+")) {
             logWriter.printf("WARN: Ввод \"%s\" отклонен, причина: неверная раскладка.%n", guess);
             throw new IncorrectInputException("Неверная раскладка");
         }
@@ -127,7 +127,7 @@ public class WordleGame {
 
         logWriter.printf("INFO: Ход номер %d: подсказка? - %s, ввод - %s, вывод - %s. Состояние: %s.%n",
                         steps,
-                        isHint? "да" : "нет",
+                        isHint ? "да" : "нет",
                         guess,
                         output,
                         gameState.toString());
@@ -139,7 +139,7 @@ public class WordleGame {
         logWriter.printf("INFO: Подсказка: претендентов после фильтра по истории: %d, ",  possibleHints.size());
         List<Integer> unknownPositions = findUnknownPositions();
 
-        if(unknownPositions.isEmpty()){
+        if (unknownPositions.isEmpty()) {
             logWriter.println("INFO: Подсказка: все буквы открыты, выдается ответ.");
             return answer;
         }
