@@ -23,8 +23,7 @@ public class Wordle {
 
     public static void main(String[] args) {
         try (PrintWriter logWriter = createLogFile();
-             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)))
-        {
+             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             try {
                 logWriter.println("INFO: Wordle запущена");
 
